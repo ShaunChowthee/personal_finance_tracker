@@ -2,7 +2,18 @@ from .file_handler import write_transactions, read_transactions
 
 def add_transaction(file_path):
   amount = input("Enter the amount: ")
-  category = input("Enter the category: ")
+  category = input("Choose a category \n1 - Sport \n2 - Travel \n3 - Groceries \n4 - Income \n5 - Other")
+  match int(category):
+    case 1:
+      category = "Sport"
+    case 2:
+      category = "Travel"
+    case 3:
+      category = "Groceries"
+    case 4:
+      category = "Income"
+    case 5:
+      category = "Other"
   date = input("Enter the date (DD-MM-YYYY)")
 
   transaction = {
