@@ -1,4 +1,4 @@
-from file_handler import write_transactions, read_transactions
+from .file_handler import write_transactions, read_transactions
 
 def add_transaction(file_path):
   amount = input("Enter the amount: ")
@@ -14,14 +14,10 @@ def add_transaction(file_path):
   transactions = read_transactions(file_path)
   transactions.append(transaction)
   write_transactions(file_path, transactions)
+  print(f"Transaction succesfully added")
 
-def view_transactions(file_path):
+def view_all_transactions(file_path):
   transactions = read_transactions(file_path)
   for line in transactions:
     print(line)
-
-if __name__ == "__main__":
-  file_path = "../data/transactions.json"
-  #add_transaction(file_path)
-  view_transactions(file_path)
 
